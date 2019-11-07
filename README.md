@@ -13,6 +13,11 @@ Hello
 Jacob Kronen
 
 # steve witherow
+# final-project
+
+  Bin Xu
+
+
 import time
 print("This is the timer")
 # Ask to Begin
@@ -34,3 +39,6 @@ while timeLoop:
         Min += 1
         print(str(Min) + " Minute")
 # Program will cancel when user presses X button
+
+
+
