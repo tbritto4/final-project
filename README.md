@@ -1,19 +1,8 @@
 
 # final-project
-
-Tyler Britton
-
-
-# final-project
-Hello
-
-
-# final-project
-
-Jacob Kronen
-
-# steve witherow
-
-# final-project
-
-  Bin Xu
+# Tyler Britton
+# Jacob Kronen
+# Steve Witherow
+# Chloe Drake
+# Erica Hewitt
+# Bin Xu
