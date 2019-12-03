@@ -1,16 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Thu Nov 28 20:28:01 2019
 
-This is a temporary script file.
+@author: jacob
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  7 23:09:03 2019
-
-@author: Jacob
-"""
 import time
 
 Employee1Start = float(0)
@@ -37,58 +31,79 @@ def TotalTimeLapsed(Employee1End, Employee1Start):
     minutes = seconds / 60
     hours = minutes / 60
     TotalTimeLapsed = hours + minutes + seconds
+    print(TotalTimeLapsed)
     return(TotalTimeLapsed)
 
 def ChooseEmployeeClockIn():
+    global start_time
+    global Employee1Start
+    global Employee2Start
     input("Press Enter to start")
     start_time = time.time()  
    
     Answer = None  
-    Answer = input("Enter which Employee you want to clock in(Employee1, Employee2)")
-    
-    if Answer == "Employee1":
-        Employee1Start = start_time
-        print(Employee1Start)
-        main()
-        return float(Employee1Start) 
-    elif Answer == "Employee2":
-        print("bo")
-    else:
-        print("Please enter Employee1, Employee2")
+    while Answer not in ("Employee1", "Employee2"):   
+        Answer = input("Enter which Employee you want to clock in(Employee1, Employee2)")
+        if Answer == "Employee1":
+            Employee1Start = start_time
+            main()
+            return float(Employee1Start) 
+        elif Answer == "Employee2":
+            Employee2Start = start_time
+            main()
+            return float(Employee2Start) 
+        else:
+            print("Please enter Employee1, Employee2")
             
 def ChooseEmployeeClockOut():
+    global end_time
+    global Employee1End
+    global Employee2End
     input("Press Enter to end")
     end_time = time.time()
    
     Answer = None
-    Answer = input("Enter which Employee you want to clock in(Employee1, Employee2)")
-    if Answer == "Employee1":
-        Employee1End = end_time
-        print(Employee1End)
-        main()
-        return float(Employee1End)
-                    
-    elif Answer == "Employee2":
-        print("PPOOO")
-    else:
-        print("Please enter Employee1, Employee2")
+    while Answer not in ("Employee1","Employee2"):
+        Answer = input("Enter which Employee you want to clock in(Employee1, Employee2)")
+        if Answer == "Employee1":
+            Employee1End = end_time
+            main()
+            return float(Employee1End)               
+        elif Answer == "Employee2":
+            Employee2End = end_time
+            main()
+            return float(Employee2End)
+        else:
+            print("Please enter Employee1, Employee2")
             
 def main():
     MainAnswer = None
-    while MainAnswer not in ("1", "2", "3"):
-        MainAnswer = input("1 for clocking employee in, 2 for clocking out employee, 3 see total ")
+    while MainAnswer not in ("1", "2", "3", "4"):
+        MainAnswer = input("1 for clocking employee in, 2 for clocking out employee, 3 see total, 4 to end program ")
         if MainAnswer == "1":
             ChooseEmployeeClockIn()
         elif MainAnswer == "2":
             ChooseEmployeeClockOut()
         elif MainAnswer == "3":
             DisplayTotal()
+        elif MainAnswer == "4":
+            print("see ya")
         else:
             print("1 for clocking employee in, 2 for adding employee, 3 for whatever")
             
 def DisplayTotal():
-    Employee1Sum = TotalTimeLapsed(Employee1Start, Employee1End)
-    print(Employee1Sum)
+    print("What Employee are you looking for?")
+    answer = input()
+    if answer == "Employee1":
+         Employee1Sum = TotalTimeLapsed(Employee1Start, Employee1End) * Employee1Wage
+         print("$",Employee1Sum)
+         main()
+    elif answer == "Employee2":
+        Employee2Sum = TotalTimeLapsed(Employee2Start, Employee2End) * Employee2Wage
+        print("$",Employee2Sum)
+        main()
+
+    
     
     
 main()
