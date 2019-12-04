@@ -4,6 +4,24 @@ Created on Thu Nov 28 20:28:01 2019
 
 @author: jacob
 """
+count = 0 
+while True: 
+    userName = input("Hello! Please Clock In! \n\nUsername: ") 
+    password = input("Password: ")
+    count += 1
+    if count == 3: 
+        print("\nThree Username and Password Attempts used. Goodbye") 
+        break 
+    else:
+        if userName == 'Employee1' and password == '1234':
+            print("Welcome! ")
+            break 
+        else:
+            print("Your Username and Password is wrong!") 
+            userName = input("\n\nUsername: ") 
+            password = input("Password: ") 
+            count += 1 
+ #login test we could work with
 
 import time
 
