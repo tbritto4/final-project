@@ -7,9 +7,66 @@ while True:
         print("\nThree Username and Password Attempts used. Goodbye") 
         break 
     else:
-        if userName == 'Employee1' and password == '1234':
+        if userName == 'Employee1' and password == '1':
             print("Welcome! ")
-            break 
+            break
+        elif userName == 'Employee2' and password == '2':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee3' and password == '3':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee4' and password == '4':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee5' and password == '5':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee6' and password == '6':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee7' and password == '7':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee8' and password == '8':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee9' and password == '9':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee10' and password == '10':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee11' and password == '11':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee12' and password == '12':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee13' and password == '13':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee14' and password == '14':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee15' and password == '15':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee16' and password == '16':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee17' and password == '17':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee18' and password == '18':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee19' and password == '19':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee20' and password == '20':
+            print("Welcome! ")
+            break
         else:
             print("Your Username and Password is wrong!") 
             userName = input("\n\nUsername: ") 
