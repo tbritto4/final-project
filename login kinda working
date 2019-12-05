@@ -1,0 +1,524 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec  3 22:52:42 2019
+
+@author: Jacob
+"""
+
+import openpyxl
+import os
+
+os.chdir('c:\\users\\erica\\desktop')
+
+wb = openpyxl.load_workbook('Test.xlsx')
+
+sheet = wb["Sheet1"]
+
+count = 0 
+while True: 
+    userName = input("Hello! Please Clock In! \n\nUsername: ") 
+    password = input("Password: ")
+    count += 1
+    if count == 3: 
+        print("\nThree Username and Password Attempts used. Goodbye") 
+        break 
+    else:
+        if userName == 'Employee1' and password == '1':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee2' and password == '2':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee3' and password == '3':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee4' and password == '4':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee5' and password == '5':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee6' and password == '6':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee7' and password == '7':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee8' and password == '8':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee9' and password == '9':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee10' and password == '10':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee11' and password == '11':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee12' and password == '12':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee13' and password == '13':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee14' and password == '14':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee15' and password == '15':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee16' and password == '16':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee17' and password == '17':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee18' and password == '18':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee19' and password == '19':
+            print("Welcome! ")
+            break
+        elif userName == 'Employee20' and password == '20':
+            print("Welcome! ")
+            break
+        else:
+            print("Your Username and Password is wrong!") 
+            userName = input("\n\nUsername: ") 
+            password = input("Password: ") 
+            count += 1 
+
+import time
+
+global end_time
+global start_time
+Employee1Start = float(0)
+
+
+Employee1Wage = 9
+Employee2Wage = 11
+
+Employee1Sum = 0
+Employee2Sum = 0
+Employee3Sum = 0
+Employee4Sum = 0
+Employee5Sum = 0
+Employee6Sum = 0
+Employee7Sum = 0
+Employee8Sum = 0
+Employee9Sum = 0
+Employee10Sum = 0
+Employee11Sum = 0
+Employee12Sum = 0
+Employee13Sum = 0
+Employee14Sum = 0
+Employee15Sum = 0
+Employee16Sum = 0
+Employee17Sum = 0
+Employee18Sum = 0
+Employee19Sum = 0
+Employee20Sum = 0
+
+Employee1 = "Employee1"
+Employee2 = "Employee2"
+Employee3 = "Employee3"
+Employee4 = "Employee4"
+   
+def TotalTimeLapsed(End, Start):
+    start_time1 = Start
+    end_time1 = End
+    time_lapsed = start_time1 - end_time1
+    seconds = time_lapsed / 60
+    minutes = seconds / 60
+    hours = minutes / 60
+    TotalTimeLapsed = hours
+    print(TotalTimeLapsed)
+    return(TotalTimeLapsed)
+
+def ChooseEmployeeClockIn():
+    start_time = 0 
+    global Employee1Start
+    global Employee2Start
+    global Employee3Start
+    global Employee4Start
+    global Employee5Start
+    global Employee6Start
+    global Employee7Start
+    global Employee8Start
+    global Employee9Start
+    global Employee10Start
+    global Employee11Start
+    global Employee12Start
+    global Employee13Start
+    global Employee14Start
+    global Employee15Start
+    global Employee16Start
+    global Employee17Start
+    global Employee18Start
+    global Employee19Start
+    global Employee20Start
+    input("Press Enter to start")
+    start_time = time.time()  
+   
+    Answer = None  
+    while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):   
+        Answer = input("Enter which Employee you want to clock in(Employee1 - Employee20): ")
+        if Answer == "Employee1":
+            Employee1Start = start_time
+            main()
+            return float(Employee1Start) 
+        elif Answer == "Employee2":
+            Employee2Start = start_time
+            main()
+            return float(Employee2Start) 
+        elif Answer == "Employee3":
+            Employee3Start = start_time
+            main()
+            return float(Employee3Start)
+        elif Answer == "Employee4":
+            Employee4Start = start_time
+            main()
+            return float(Employee4Start)
+        elif Answer == "Employee5":
+            Employee5Start = start_time
+            main()
+            return float(Employee5Start)
+        elif Answer == "Employee6":
+            Employee6Start = start_time
+            main()
+            return float(Employee6Start)
+        elif Answer == "Employee7":
+            Employee7Start = start_time
+            main()
+            return float(Employee7Start)
+        elif Answer == "Employee8":
+            Employee8Start = start_time
+            main()
+            return float(Employee8Start)
+        elif Answer == "Employee9":
+            Employee9Start = start_time
+            main()
+            return float(Employee9Start)
+        elif Answer == "Employee10":
+            Employee10Start = start_time
+            main()
+            return float(Employee10Start)
+        elif Answer == "Employee11":
+            Employee11Start = start_time
+            main()
+            return float(Employee11Start)
+        elif Answer == "Employee12":
+            Employee12Start = start_time
+            main()
+            return float(Employee12Start)
+        elif Answer == "Employee13":
+            Employee13Start = start_time
+            main()
+            return float(Employee13Start)
+        elif Answer == "Employee14":
+            Employee14Start = start_time
+            main()
+            return float(Employee14Start)
+        elif Answer == "Employee15":
+            Employee15Start = start_time
+            main()
+            return float(Employee15Start)
+        elif Answer == "Employee16":
+            Employee16Start = start_time
+            main()
+            return float(Employee16Start)
+        elif Answer == "Employee17":
+            Employee17Start = start_time
+            main()
+            return float(Employee17Start)
+        elif Answer == "Employee18":
+            Employee18Start = start_time
+            main()
+            return float(Employee18Start)
+        elif Answer == "Employee19":
+            Employee19Start = start_time
+            main()
+            return float(Employee19Start)
+        elif Answer == "Employee20":
+            Employee20Start = start_time
+            main()
+            return float(Employee20Start)
+        else:
+            print("Please enter Employee1, Employee2")
+            
+def ChooseEmployeeClockOut():
+    end_time = 0
+    global Employee1End
+    global Employee2End
+    global Employee3End
+    global Employee4End
+    global Employee5End
+    global Employee6End
+    global Employee7End
+    global Employee8End
+    global Employee9End
+    global Employee10End
+    global Employee11End
+    global Employee12End
+    global Employee13End
+    global Employee14End
+    global Employee15End
+    global Employee16End
+    global Employee17End
+    global Employee18End
+    global Employee19End
+    global Employee20End
+    input("Press Enter to end")
+    end_time = time.time()
+   
+    Answer = None
+    while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):
+        Answer = input("Enter which Employee you want to clock out(Employee1 - Employee20): ")
+        if Answer == "Employee1":
+            Employee1End = end_time
+            main()
+            return float(Employee1End)               
+        elif Answer == "Employee2":
+            Employee2End = end_time
+            main()
+            return float(Employee2End)
+        elif Answer == "Employee3":
+            Employee3End = end_time
+            main()
+            return float(Employee3End)
+        elif Answer == "Employee4":
+            Employee4End = end_time
+            main()
+            return float(Employee4End)
+        elif Answer == "Employee5":
+            Employee5End = end_time
+            main()
+            return float(Employee5End)
+        elif Answer == "Employee6":
+            Employee6End = end_time
+            main()
+            return float(Employee6End)
+        elif Answer == "Employee7":
+            Employee7End = end_time
+            main()
+            return float(Employee7End)
+        elif Answer == "Employee8":
+            Employee8End = end_time
+            main()
+            return float(Employee8End)
+        elif Answer == "Employee9":
+            Employee9End = end_time
+            main()
+            return float(Employee9End)
+        elif Answer == "Employee10":
+            Employee10End = end_time
+            main()
+            return float(Employee10End)
+        elif Answer == "Employee11":
+            Employee11End = end_time
+            main()
+            return float(Employee11End)
+        elif Answer == "Employee12":
+            Employee12End = end_time
+            main()
+            return float(Employee12End)
+        elif Answer == "Employee13":
+            Employee13End = end_time
+            main()
+            return float(Employee13End)
+        elif Answer == "Employee14":
+            Employee14End = end_time
+            main()
+            return float(Employee14End)
+        elif Answer == "Employee15":
+            Employee15End = end_time
+            main()
+            return float(Employee15End)
+        elif Answer == "Employee16":
+            Employee16End = end_time
+            main()
+            return float(Employee16End)
+        elif Answer == "Employee17":
+            Employee17End = end_time
+            main()
+            return float(Employee17End)
+        elif Answer == "Employee18":
+            Employee18End = end_time
+            main()
+            return float(Employee18End)
+        elif Answer == "Employee19":
+            Employee19End = end_time
+            main()
+            return float(Employee19End)
+        elif Answer == "Employee20":
+            Employee20End = end_time
+            main()
+            return float(Employee20End)
+        else:
+            print("Please enter Employee1, Employee2")
+            
+def main():
+    MainAnswer = None
+    while MainAnswer not in ("1", "2", "3", "4", "5"):
+        MainAnswer = input("1 for clocking employee in, 2 for clocking out employee, 3 see total, 4 to end program, 5 for master controls: ")
+        if MainAnswer == "1":
+            ChooseEmployeeClockIn()
+        elif MainAnswer == "2":
+            ChooseEmployeeClockOut()
+        elif MainAnswer == "3":
+            DisplayTotal()
+        elif MainAnswer == "4":
+            print("see ya")
+        else:
+            print("1 for clocking employee in, 2 for adding employee, 3 for whatever: ")
+            
+def DisplayTotal():
+    answer = None
+    while answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):       
+        answer = input("What Employee are you looking for?: ")
+        if answer == "Employee1":
+            Employee1Sum = TotalTimeLapsed(Employee1Start, Employee1End) * Employee1Wage
+            sheet['B2'].value = TotalTimeLapsed(Employee1Start, Employee1End) + sheet['B3'].value
+            sheet['C2'].value = Employee1Sum + sheet['C2'].value
+            print("$",Employee1Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee2":
+            Employee2Sum = TotalTimeLapsed(Employee2Start, Employee2End) * Employee2Wage
+            sheet['B3'].value = TotalTimeLapsed(Employee2Start, Employee2End) + sheet['B3'].value
+            sheet['C3'].value = Employee2Sum + sheet['C3'].value
+            print("$",Employee2Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee3":
+            Employee3Sum = TotalTimeLapsed(Employee3Start, Employee3End) * Employee2Wage
+            sheet['B4'].value = TotalTimeLapsed(Employee3Start, Employee3End) + sheet['B4'].value
+            sheet['C4'].value = Employee3Sum + sheet['C4'].value
+            print("$",Employee3Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee4":
+            Employee4Sum = TotalTimeLapsed(Employee4Start, Employee4End) * Employee2Wage
+            sheet['B5'].value = TotalTimeLapsed(Employee4Start, Employee4End) + sheet['B5'].value
+            sheet['C5'].value = Employee4Sum + sheet['C5'].value
+            print("$",Employee4Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee5":
+            Employee5Sum = TotalTimeLapsed(Employee5Start, Employee5End) * Employee2Wage
+            sheet['B6'].value = TotalTimeLapsed(Employee5Start, Employee5End) + sheet['B6'].value
+            sheet['C6'].value = Employee5Sum + sheet['C6'].value
+            print("$",Employee5Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee6":
+            Employee6Sum = TotalTimeLapsed(Employee6Start, Employee6End) * Employee2Wage
+            sheet['B7'].value = TotalTimeLapsed(Employee6Start, Employee6End) + sheet['B7'].value
+            sheet['C7'].value = Employee6Sum + sheet['C7'].value
+            print("$",Employee6Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee7":
+            Employee7Sum = TotalTimeLapsed(Employee7Start, Employee7End) * Employee2Wage
+            sheet['B8'].value = TotalTimeLapsed(Employee7Start, Employee7End) + sheet['B8'].value
+            sheet['C8'].value = Employee7Sum + sheet['C8'].value
+            print("$",Employee7Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee8":
+            Employee8Sum = TotalTimeLapsed(Employee8Start, Employee8End) * Employee2Wage
+            sheet['B9'].value = TotalTimeLapsed(Employee8Start, Employee8End) + sheet['B9'].value
+            sheet['C9'].value = Employee8Sum + sheet['C9'].value
+            print("$",Employee8Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee9":
+            Employee9Sum = TotalTimeLapsed(Employee9Start, Employee9End) * Employee2Wage
+            sheet['B10'].value = TotalTimeLapsed(Employee9Start, Employee9End) + sheet['B10'].value
+            sheet['C10'].value = Employee9Sum + sheet['C10'].value
+            print("$",Employee9Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee10":
+            Employee10Sum = TotalTimeLapsed(Employee10Start, Employee10End) * Employee2Wage
+            sheet['B11'].value = TotalTimeLapsed(Employee10Start, Employee10End) + sheet['B11'].value
+            sheet['C11'].value = Employee10Sum + sheet['C11'].value
+            print("$",Employee10Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee11":
+            Employee11Sum = TotalTimeLapsed(Employee11Start, Employee11End) * Employee2Wage
+            sheet['B12'].value = TotalTimeLapsed(Employee11Start, Employee11End) + sheet['B12'].value
+            sheet['C12'].value = Employee11Sum + sheet['C12'].value
+            print("$",Employee11Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee12":
+            Employee12Sum = TotalTimeLapsed(Employee12Start, Employee12End) * Employee2Wage
+            sheet['B13'].value = TotalTimeLapsed(Employee12Start, Employee12End) + sheet['B13'].value
+            sheet['C13'].value = Employee12Sum + sheet['C13'].value
+            print("$",Employee12Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee13":
+            Employee13Sum = TotalTimeLapsed(Employee13Start, Employee13End) * Employee2Wage
+            sheet['B14'].value = TotalTimeLapsed(Employee13Start, Employee13End) + sheet['B14'].value
+            sheet['C14'].value = Employee13Sum + sheet['C14'].value
+            print("$",Employee13Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee14":
+            Employee14Sum = TotalTimeLapsed(Employee14Start, Employee14End) * Employee2Wage
+            sheet['B15'].value = TotalTimeLapsed(Employee14Start, Employee14End) + sheet['B15'].value
+            sheet['C15'].value = Employee14Sum + sheet['C15'].value
+            print("$",Employee14Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee15":
+            Employee15Sum = TotalTimeLapsed(Employee15Start, Employee15End) * Employee2Wage
+            sheet['B16'].value = TotalTimeLapsed(Employee15Start, Employee15End) + sheet['B16'].value
+            sheet['C16'].value = Employee15Sum + sheet['C16'].value
+            print("$",Employee15Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee16":
+            Employee16Sum = TotalTimeLapsed(Employee16Start, Employee16End) * Employee2Wage
+            sheet['B17'].value = TotalTimeLapsed(Employee16Start, Employee16End) + sheet['B17'].value
+            sheet['C17'].value = Employee16Sum + sheet['C17'].value
+            print("$",Employee16Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee17":
+            Employee17Sum = TotalTimeLapsed(Employee17Start, Employee17End) * Employee2Wage
+            sheet['B18'].value = TotalTimeLapsed(Employee17Start, Employee17End) + sheet['B18'].value
+            sheet['C18'].value = Employee17Sum + sheet['C18'].value
+            print("$",Employee17Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee18":
+            Employee18Sum = TotalTimeLapsed(Employee18Start, Employee18End) * Employee2Wage
+            sheet['B19'].value = TotalTimeLapsed(Employee18Start, Employee18End) + sheet['B19'].value
+            sheet['C19'].value = Employee18Sum + sheet['C19'].value
+            print("$",Employee18Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee19":
+            Employee19Sum = TotalTimeLapsed(Employee19Start, Employee19End) * Employee2Wage
+            sheet['B20'].value = TotalTimeLapsed(Employee19Start, Employee19End) + sheet['B20'].value
+            sheet['C20'].value = Employee19Sum + sheet['C20'].value
+            print("$",Employee19Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee20":
+            Employee20Sum = TotalTimeLapsed(Employee20Start, Employee20End) * Employee2Wage
+            sheet['B21'].value = TotalTimeLapsed(Employee20Start, Employee20End) + sheet['B21'].value
+            sheet['C21'].value = Employee20Sum + sheet['C21'].value
+            print("$",Employee20Sum)
+            wb.save('Test.xlsx')
+            main()
+        else:
+            "Please try again"
+
+
+main()
