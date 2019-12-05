@@ -1,0 +1,88 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov  7 23:09:03 2019
+
+@author: Jacob
+"""
+print("Welcome...")
+welcome = input("Do you have an acount? y/n: ")
+if welcome == "n":
+    while True:
+        username  = input("Enter a username:")
+        password  = input("Enter a password:")
+        password1 = input("Confirm password:")
+        if password == password1:
+            file = open(username+".txt", "w")
+            file.write(username+":"+password)
+            file.close()
+            welcome = "y"
+            break
+        print("Passwords do NOT match!")
+ 
+if welcome == "y":
+    while True:
+        login1 = input("Login:")
+        login2 = input("Password:")
+        file = open(login1+".txt", "r")
+        data   = file.readline()
+        file.close()
+        if data == login1+":"+login2:
+            print("Welcome", login1)
+            break
+        print("Incorrect username or password.")
+
+
+import time
+
+Employee1Wage = 9
+Employee2Wage = 11
+
+Employee1Sum = 0
+Employee2Sum = 0
+
+def TotalTimeLapsed(time_lapsed):
+    seconds = time_lapsed / 60
+    minutes = seconds / 60
+    hours = minutes / 60
+    TotalTimeLapsed = hours + minutes + seconds
+    return(TotalTimeLapsed)
+
+def Timer():
+    start_time = None
+    end_time = None
+    input("Press Enter to start")
+    start_time = time.time()
+    input("Press Enter to stop")
+    end_time = time.time()
+    time_lapsed = end_time - start_time
+    return time_lapsed
+
+def ChooseEmployeeClockIn():
+    Answer = None
+    while Answer not in ("Employee1", "Employee2"):
+        Answer = input("Enter which Employee you want to clock in(Employee1, Employee2)")
+        if Answer == "Employee1":
+            Employee1Sum = TotalTimeLapsed(Timer()) * Employee1Wage
+            print("$",Employee1Sum)
+            main()
+        elif Answer == "Employee2":
+            Employee2Sum = TotalTimeLapsed(Timer()) * Employee2Wage
+            print("$",Employee2Sum)
+            main()
+        else:
+            print("Please enter Employee1, Employee2")
+            
+def main():
+    MainAnswer = None
+    while MainAnswer not in ("1", "2", "3"):
+        MainAnswer = input("1 for clocking employee in, 2 for adding employee, 3 for whatever: ")
+        if MainAnswer == "1":
+            ChooseEmployeeClockIn()
+        elif MainAnswer == "2":
+            print("Blah")
+        elif MainAnswer == "3":
+            print("blah")
+        else:
+            print("1 for clocking employee in, 2 for adding employee, 3 for whatever")
+
+main()
