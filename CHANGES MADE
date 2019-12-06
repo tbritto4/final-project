@@ -1,0 +1,956 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec  6 15:20:54 2019
+
+@author: Chole.Drake
+"""
+
+import openpyxl
+import os
+
+os.chdir('C:\\Users\\Chole.Drake\\Desktop')
+
+wb = openpyxl.load_workbook('Test.xlsx')
+
+sheet = wb["Sheet1"]
+
+import time 
+
+global end_time
+global start_time
+Employee1Start = float(0)
+Employee2Start = float(0)
+
+Employee1Wage = 9
+Employee2Wage = 11
+
+global Employee1Sum
+global Employee2Sum
+global Employee3Sum
+global Employee4Sum
+global Employee5Sum
+global Employee6Sum
+global Employee7Sum
+global Employee8Sum
+global Employee9Sum
+global Employee10Sum
+global Employee11Sum
+global Employee12Sum
+global Employee13Sum
+global Employee14Sum
+global Employee15Sum
+global Employee16Sum
+global Employee17Sum
+global Employee18Sum
+global Employee19Sum
+global Employee20Sum
+
+Employee1 = "Employee1"
+Employee2 = "Employee2"
+Employee3 = "Employee3"
+Employee4 = "Employee4"
+   
+def TotalTimeLapsed(End, Start):
+    start_time1 = Start
+    end_time1 = End
+    time_lapsed = start_time1 - end_time1 
+    seconds = time_lapsed / 60
+    minutes = seconds / 60
+    hours = minutes / 24
+    TotalTimeLapsed = hours
+    print(TotalTimeLapsed)
+    return(TotalTimeLapsed)
+
+def ChooseEmployeeClockIn():
+    start_time = 0 
+    global Employee1Start
+    global Employee2Start
+    global Employee3Start
+    global Employee4Start
+    global Employee5Start
+    global Employee6Start
+    global Employee7Start
+    global Employee8Start
+    global Employee9Start
+    global Employee10Start
+    global Employee11Start
+    global Employee12Start
+    global Employee13Start
+    global Employee14Start
+    global Employee15Start
+    global Employee16Start
+    global Employee17Start
+    global Employee18Start
+    global Employee19Start
+    global Employee20Start
+    input("Press Enter to start")
+    start_time = time.time()  
+   
+    Answer = None  
+    while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):   
+        Answer = input("Enter which Employee you want to clock in(Employee1 - Employee20): ")
+        if Answer == "Employee1":
+            Employee1Start = start_time
+            main()
+            return float(Employee1Start) 
+        elif Answer == "Employee2":
+            Employee2Start = start_time
+            main()
+            return float(Employee2Start) 
+        elif Answer == "Employee3":
+            Employee3Start = start_time
+            main()
+            return float(Employee3Start)
+        elif Answer == "Employee4":
+            Employee4Start = start_time
+            main()
+            return float(Employee4Start)
+        elif Answer == "Employee5":
+            Employee5Start = start_time
+            main()
+            return float(Employee5Start)
+        elif Answer == "Employee6":
+            Employee6Start = start_time
+            main()
+            return float(Employee6Start)
+        elif Answer == "Employee7":
+            Employee7Start = start_time
+            main()
+            return float(Employee7Start)
+        elif Answer == "Employee8":
+            Employee8Start = start_time
+            main()
+            return float(Employee8Start)
+        elif Answer == "Employee9":
+            Employee9Start = start_time
+            main()
+            return float(Employee9Start)
+        elif Answer == "Employee10":
+            Employee10Start = start_time
+            main()
+            return float(Employee10Start)
+        elif Answer == "Employee11":
+            Employee11Start = start_time
+            main()
+            return float(Employee11Start)
+        elif Answer == "Employee12":
+            Employee12Start = start_time
+            main()
+            return float(Employee12Start)
+        elif Answer == "Employee13":
+            Employee13Start = start_time
+            main()
+            return float(Employee13Start)
+        elif Answer == "Employee14":
+            Employee14Start = start_time
+            main()
+            return float(Employee14Start)
+        elif Answer == "Employee15":
+            Employee15Start = start_time
+            main()
+            return float(Employee15Start)
+        elif Answer == "Employee16":
+            Employee16Start = start_time
+            main()
+            return float(Employee16Start)
+        elif Answer == "Employee17":
+            Employee17Start = start_time
+            main()
+            return float(Employee17Start)
+        elif Answer == "Employee18":
+            Employee18Start = start_time
+            main()
+            return float(Employee18Start)
+        elif Answer == "Employee19":
+            Employee19Start = start_time
+            main()
+            return float(Employee19Start)
+        elif Answer == "Employee20":
+            Employee20Start = start_time
+            main()
+            return float(Employee20Start)
+        else:
+            print("Please enter Employee1, Employee2")
+            
+def ChooseEmployeeClockOut():
+    end_time = 0
+    global Employee1End
+    global Employee2End
+    global Employee3End
+    global Employee4End
+    global Employee5End
+    global Employee6End
+    global Employee7End
+    global Employee8End
+    global Employee9End
+    global Employee10End
+    global Employee11End
+    global Employee12End
+    global Employee13End
+    global Employee14End
+    global Employee15End
+    global Employee16End
+    global Employee17End
+    global Employee18End
+    global Employee19End
+    global Employee20End
+    input("Press Enter to end")
+    end_time = time.time()
+   
+    Answer = None
+    while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):
+        Answer = input("Enter which Employee you want to clock out(Employee1 - Employee20): ")
+        if Answer == "Employee1":
+            Employee1End = end_time
+            main()
+            return float(Employee1End)               
+        elif Answer == "Employee2":
+            Employee2End = end_time
+            main()
+            return float(Employee2End)
+        elif Answer == "Employee3":
+            Employee3End = end_time
+            main()
+            return float(Employee3End)
+        elif Answer == "Employee4":
+            Employee4End = end_time
+            main()
+            return float(Employee4End)
+        elif Answer == "Employee5":
+            Employee5End = end_time
+            main()
+            return float(Employee5End)
+        elif Answer == "Employee6":
+            Employee6End = end_time
+            main()
+            return float(Employee6End)
+        elif Answer == "Employee7":
+            Employee7End = end_time
+            main()
+            return float(Employee7End)
+        elif Answer == "Employee8":
+            Employee8End = end_time
+            main()
+            return float(Employee8End)
+        elif Answer == "Employee9":
+            Employee9End = end_time
+            main()
+            return float(Employee9End)
+        elif Answer == "Employee10":
+            Employee10End = end_time
+            main()
+            return float(Employee10End)
+        elif Answer == "Employee11":
+            Employee11End = end_time
+            main()
+            return float(Employee11End)
+        elif Answer == "Employee12":
+            Employee12End = end_time
+            main()
+            return float(Employee12End)
+        elif Answer == "Employee13":
+            Employee13End = end_time
+            main()
+            return float(Employee13End)
+        elif Answer == "Employee14":
+            Employee14End = end_time
+            main()
+            return float(Employee14End)
+        elif Answer == "Employee15":
+            Employee15End = end_time
+            main()
+            return float(Employee15End)
+        elif Answer == "Employee16":
+            Employee16End = end_time
+            main()
+            return float(Employee16End)
+        elif Answer == "Employee17":
+            Employee17End = end_time
+            main()
+            return float(Employee17End)
+        elif Answer == "Employee18":
+            Employee18End = end_time
+            main()
+            return float(Employee18End)
+        elif Answer == "Employee19":
+            Employee19End = end_time
+            main()
+            return float(Employee19End)
+        elif Answer == "Employee20":
+            Employee20End = end_time
+            main()
+            return float(Employee20End)
+        else:
+            print("Please enter Employee1, Employee2")
+            
+def main():
+    MainAnswer = None
+    while MainAnswer not in ("1", "2", "3", "4", "5"):
+        MainAnswer = input("1 for clocking employee in, 2 for clocking out employee, 3 see total, 4 for master controls, 5 to end program: ")
+        if MainAnswer == "1":
+            ChooseEmployeeClockIn()
+        elif MainAnswer == "2":
+            ChooseEmployeeClockOut()
+        elif MainAnswer == "3":
+            DisplayTotal()
+        elif MainAnswer == "4":
+            MasterControl()
+        elif MainAnswer == "5":
+            print("see ya")
+        else:
+            print("1 for clocking employee in, 2 for adding employee, 3 for whatever: ")
+    
+            
+def DisplayTotal():
+    answer = None
+    while answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):       
+        answer = input("What Employee are you looking for?: ")
+        if answer == "Employee1":
+            print("Hours worked",sheet['B2'].value, "Money earned", sheet['C2'].value)
+            Employee1Sum = TotalTimeLapsed(Employee1Start, Employee1End) * Employee1Wage
+            sheet['B2'].value = TotalTimeLapsed(Employee1Start, Employee1End) + sheet['B2'].value
+            sheet['C2'].value = Employee1Sum + float(sheet['C2'].value)
+            print("$",Employee1Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee2":
+            print("Hours worked",sheet['B3'].value, "Money earned", sheet['C3'].value)
+            Employee2Sum = TotalTimeLapsed(Employee2Start, Employee2End) * Employee2Wage
+            sheet['B3'].value = TotalTimeLapsed(Employee2Start, Employee2End) + sheet['B3'].value
+            sheet['C3'].value = Employee2Sum + float(sheet['C3'].value)
+            print("$",Employee2Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee3":
+            print("Hours worked",sheet['B4'].value, "Money earned", sheet['C4'].value)
+            Employee3Sum = TotalTimeLapsed(Employee3Start, Employee3End) * Employee2Wage
+            sheet['B4'].value = TotalTimeLapsed(Employee3Start, Employee3End) + sheet['B4'].value
+            sheet['C4'].value = Employee3Sum + float(sheet['C4'].value)
+            print("$",Employee3Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee4":     
+            print("Hours worked",sheet['B5'].value, "Money earned", sheet['C5'].value) 
+            Employee4Sum = TotalTimeLapsed(Employee4Start, Employee4End) * Employee2Wage
+            sheet['B5'].value = TotalTimeLapsed(Employee4Start, Employee4End) + sheet['B5'].value
+            sheet['C5'].value = Employee4Sum + float(sheet['C5'].value)
+            print("$",Employee4Sum)
+            wb.save('Test.xlsx')
+            main()                         
+        elif answer == "Employee5":
+            print("Hours worked",sheet['B6'].value, "Money earned", sheet['C6'].value)
+            Employee5Sum = TotalTimeLapsed(Employee5Start, Employee5End) * Employee2Wage
+            sheet['B6'].value = TotalTimeLapsed(Employee5Start, Employee5End) + sheet['B6'].value
+            sheet['C6'].value = Employee5Sum + float(sheet['C6'].value)
+            print("$",Employee5Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee6":
+            print("Hours worked",sheet['B7'].value, "Money earned", sheet['C7'].value)
+            Employee6Sum = TotalTimeLapsed(Employee6Start, Employee6End) * Employee2Wage
+            sheet['B7'].value = TotalTimeLapsed(Employee6Start, Employee6End) + sheet['B7'].value
+            sheet['C7'].value = Employee6Sum + float(sheet['C7'].value)
+            print("$",Employee6Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee7":
+            print("Hours worked",sheet['B8'].value, "Money earned", sheet['C8'].value)
+            Employee7Sum = TotalTimeLapsed(Employee7Start, Employee7End) * Employee2Wage
+            sheet['B8'].value = TotalTimeLapsed(Employee7Start, Employee7End) + sheet['B8'].value
+            sheet['C8'].value = Employee7Sum + float(sheet['C8'].value)
+            print("$",Employee7Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee8":
+            print("Hours worked",sheet['B9'].value, "Money earned", sheet['C9'].value)
+            Employee8Sum = TotalTimeLapsed(Employee8Start, Employee8End) * Employee2Wage
+            sheet['B9'].value = TotalTimeLapsed(Employee8Start, Employee8End) + sheet['B9'].value
+            sheet['C9'].value = Employee8Sum + float(sheet['C9'].value)
+            print("$",Employee8Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee9":
+            print("Hours worked",sheet['B10'].value, "Money earned", sheet['C10'].value)
+            Employee9Sum = TotalTimeLapsed(Employee9Start, Employee9End) * Employee2Wage
+            sheet['B10'].value = TotalTimeLapsed(Employee9Start, Employee9End) + sheet['B10'].value
+            sheet['C10'].value = Employee9Sum + float(sheet['C10'].value)
+            print("$",Employee9Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee10":
+            print("Hours worked",sheet['B11'].value, "Money earned", sheet['C11'].value)
+            Employee10Sum = TotalTimeLapsed(Employee10Start, Employee10End) * Employee2Wage
+            sheet['B11'].value = TotalTimeLapsed(Employee10Start, Employee10End) + sheet['B11'].value
+            sheet['C11'].value = Employee10Sum + float(sheet['C11'].value)
+            print("$",Employee10Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee11":
+            print("Hours worked",sheet['B12'].value, "Money earned", sheet['C12'].value)
+            Employee11Sum = TotalTimeLapsed(Employee11Start, Employee11End) * Employee2Wage
+            sheet['B12'].value = TotalTimeLapsed(Employee11Start, Employee11End) + sheet['B12'].value
+            sheet['C12'].value = Employee11Sum + float(sheet['C12'].value)
+            print("$",Employee11Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee12":
+            print("Hours worked",sheet['B13'].value, "Money earned", sheet['C13'].value)
+            Employee12Sum = TotalTimeLapsed(Employee12Start, Employee12End) * Employee2Wage
+            sheet['B13'].value = TotalTimeLapsed(Employee12Start, Employee12End) + sheet['B13'].value
+            sheet['C13'].value = Employee12Sum + float(sheet['C13'].value)
+            print("$",Employee12Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee13":
+            print("Hours worked",sheet['B14'].value, "Money earned", sheet['C14'].value)
+            Employee13Sum = TotalTimeLapsed(Employee13Start, Employee13End) * Employee2Wage
+            sheet['B14'].value = TotalTimeLapsed(Employee13Start, Employee13End) + sheet['B14'].value
+            sheet['C14'].value = Employee13Sum + float(sheet['C14'].value)
+            print("$",Employee13Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee14":
+            print("Hours worked",sheet['B15'].value, "Money earned", sheet['C15'].value)
+            Employee14Sum = TotalTimeLapsed(Employee14Start, Employee14End) * Employee2Wage
+            sheet['B15'].value = TotalTimeLapsed(Employee14Start, Employee14End) + sheet['B15'].value
+            sheet['C15'].value = Employee14Sum + float(sheet['C15'].value)
+            print("$",Employee14Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee15":
+            print("Hours worked",sheet['B16'].value, "Money earned", sheet['C16'].value)
+            Employee15Sum = TotalTimeLapsed(Employee15Start, Employee15End) * Employee2Wage
+            sheet['B16'].value = TotalTimeLapsed(Employee15Start, Employee15End) + sheet['B16'].value
+            sheet['C16'].value = Employee15Sum + float(sheet['C16'].value)
+            print("$",Employee15Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee16":
+            print("Hours worked",sheet['B17'].value, "Money earned", sheet['C17'].value)
+            Employee16Sum = TotalTimeLapsed(Employee16Start, Employee16End) * Employee2Wage
+            sheet['B17'].value = TotalTimeLapsed(Employee16Start, Employee16End) + sheet['B17'].value
+            sheet['C17'].value = Employee16Sum + float(sheet['C17'].value)
+            print("$",Employee16Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee17":
+            print("Hours worked",sheet['B18'].value, "Money earned", sheet['C18'].value)
+            Employee17Sum = TotalTimeLapsed(Employee17Start, Employee17End) * Employee2Wage
+            sheet['B18'].value = TotalTimeLapsed(Employee17Start, Employee17End) + sheet['B18'].value
+            sheet['C18'].value = Employee17Sum + float(sheet['C18'].value)
+            print("$",Employee17Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee18":
+            print("Hours worked",sheet['B19'].value, "Money earned", sheet['C19'].value)
+            Employee18Sum = TotalTimeLapsed(Employee18Start, Employee18End) * Employee2Wage
+            sheet['B19'].value = TotalTimeLapsed(Employee18Start, Employee18End) + sheet['B19'].value
+            sheet['C19'].value = Employee18Sum + float(sheet['C19'].value)
+            print("$",Employee18Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee19":
+            print("Hours worked",sheet['B20'].value, "Money earned", sheet['C20'].value)
+            Employee19Sum = TotalTimeLapsed(Employee19Start, Employee19End) * Employee2Wage
+            sheet['B20'].value = TotalTimeLapsed(Employee19Start, Employee19End) + sheet['B20'].value
+            sheet['C20'].value = Employee19Sum + float(sheet['C20'].value)
+            print("$",Employee19Sum)
+            wb.save('Test.xlsx')
+            main()
+        elif answer == "Employee20":
+            print("Hours worked",sheet['B21'].value, "Money earned", sheet['C21'].value)
+            Employee20Sum = TotalTimeLapsed(Employee20Start, Employee20End) * Employee2Wage
+            sheet['B21'].value = TotalTimeLapsed(Employee20Start, Employee20End) + sheet['B21'].value
+            sheet['C21'].value = Employee20Sum + float(sheet['C21'].value)
+            print("$",Employee20Sum)
+            wb.save('Test.xlsx')
+            main()
+        else:
+            "Please try again"
+            
+#def AddHours(EmployeeAddedHours):
+    
+
+def MasterControl():
+    count = 0 
+    while True: 
+        userName = input("Hello! Please Clock In! \n\nUsername: ") 
+        password = input("Password: ")
+        count += 1
+        if count == 3: 
+            print("\nThree Username and Password Attempts used. Goodbye") 
+            break 
+        else:
+            if userName == 'Employee1' and password == '1':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B2'].value = sheet['B2'].value + Hours
+                        Employee1Sum = Hours * Employee1Wage
+                        sheet['C2'].value = sheet['C2'].value + Employee1Sum
+                        sheet['C2'].value = str(sheet['C2'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee1Wage 
+                        sheet['B2'].value = sheet['B2'].value + Hours
+                        sheet['C2'].value = float(sheet['C2'].value) + float(Dollars)
+                        sheet['C2'].value = str(sheet['C2'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+                break
+            elif userName == 'Employee2' and password == '2':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B3'].value = sheet['B3'].value + Hours
+                        Employee2Sum = Hours * Employee2Wage
+                        sheet['C3'].value = sheet['C3'].value + Employee2Sum
+                        sheet['C3'].value = str(sheet['C3'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee1Wage 
+                        sheet['B3'].value = sheet['B3'].value + Hours
+                        sheet['C3'].value = float(sheet['C3'].value) + float(Dollars)
+                        sheet['C3'].value = str(sheet['C3'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+                break
+            elif userName == 'Employee3' and password == '3':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B4'].value = sheet['B4'].value + Hours
+                        Employee3Sum = Hours * Employee2Wage
+                        sheet['C4'].value = sheet['C4'].value + Employee3Sum
+                        sheet['C4'].value = str(sheet['C4'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B4'].value = sheet['B4'].value + Hours
+                        sheet['C4'].value = float(sheet['C4'].value) + float(Dollars)
+                        sheet['C4'].value = str(sheet['C4'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+                break
+            elif userName == 'Employee4' and password == '4':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B5'].value = sheet['B5'].value + Hours
+                        Employee4Sum = Hours * Employee2Wage
+                        sheet['C5'].value = sheet['C5'].value + Employee4Sum
+                        sheet['C5'].value = str(sheet['C5'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B5'].value = sheet['B5'].value + Hours
+                        sheet['C5'].value = float(sheet['C5'].value) + float(Dollars)
+                        sheet['C5'].value = str(sheet['C5'].value)
+                        wb.save('Test.xlsx')
+                        main()                                  
+                break
+            elif userName == 'Employee5' and password == '5':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B6'].value = sheet['B6'].value + Hours
+                        Employee5Sum = Hours * Employee2Wage
+                        sheet['C6'].value = sheet['C6'].value + Employee5Sum
+                        sheet['C6'].value = str(sheet['C6'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B6'].value = sheet['B6'].value + Hours
+                        sheet['C6'].value = float(sheet['C6'].value) + float(Dollars)
+                        sheet['C6'].value = str(sheet['C6'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+                break
+            elif userName == 'Employee6' and password == '6':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B7'].value = sheet['B7'].value + Hours
+                        Employee6Sum = Hours * Employee2Wage
+                        sheet['C7'].value = sheet['C7'].value + Employee6Sum
+                        sheet['C7'].value = str(sheet['C7'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B7'].value = sheet['B7'].value + Hours
+                        sheet['C7'].value = float(sheet['C7'].value) + float(Dollars)
+                        sheet['C7'].value = str(sheet['C7'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee7' and password == '7':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B8'].value = sheet['B8'].value + Hours
+                        Employee7Sum = Hours * Employee2Wage
+                        sheet['C8'].value = sheet['C8'].value + Employee7Sum
+                        sheet['C8'].value = str(sheet['C8'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B8'].value = sheet['B8'].value + Hours
+                        sheet['C8'].value = float(sheet['C8'].value) + float(Dollars)
+                        sheet['C8'].value = str(sheet['C8'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee8' and password == '8':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B9'].value = sheet['B9'].value + Hours
+                        Employee8Sum = Hours * Employee2Wage
+                        sheet['C9'].value = sheet['C9'].value + Employee8Sum
+                        sheet['C9'].value = str(sheet['C9'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B9'].value = sheet['B9'].value + Hours
+                        sheet['C9'].value = float(sheet['C9'].value) + float(Dollars)
+                        sheet['C9'].value = str(sheet['C9'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee9' and password == '9':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B10'].value = sheet['B10'].value + Hours
+                        Employee9Sum = Hours * Employee2Wage
+                        sheet['C10'].value = sheet['C10'].value + Employee9Sum
+                        sheet['C10'].value = str(sheet['C10'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B10'].value = sheet['B10'].value + Hours
+                        sheet['C10'].value = float(sheet['C10'].value) + float(Dollars)
+                        sheet['C10'].value = str(sheet['C10'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee10' and password == '10':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B11'].value = sheet['B11'].value + Hours
+                        Employee10Sum = Hours * Employee2Wage
+                        sheet['C11'].value = sheet['C11'].value + Employee10Sum
+                        sheet['C11'].value = str(sheet['C11'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B11'].value = sheet['B11'].value + Hours
+                        sheet['C11'].value = float(sheet['C11'].value) + float(Dollars)
+                        sheet['C11'].value = str(sheet['C11'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee11' and password == '11':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B12'].value = sheet['B12'].value + Hours
+                        Employee11Sum = Hours * Employee2Wage
+                        sheet['C12'].value = sheet['C12'].value + Employee11Sum
+                        sheet['C12'].value = str(sheet['C12'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B12'].value = sheet['B12'].value + Hours
+                        sheet['C12'].value = float(sheet['C12'].value) + float(Dollars)
+                        sheet['C12'].value = str(sheet['C12'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee12' and password == '12':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B13'].value = sheet['B13'].value + Hours
+                        Employee12Sum = Hours * Employee2Wage
+                        sheet['C13'].value = sheet['C13'].value + Employee12Sum
+                        sheet['C13'].value = str(sheet['C13'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B13'].value = sheet['B13'].value + Hours
+                        sheet['C13'].value = float(sheet['C13'].value) + float(Dollars)
+                        sheet['C13'].value = str(sheet['C13'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee13' and password == '13':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B14'].value = sheet['B14'].value + Hours
+                        Employee13Sum = Hours * Employee2Wage
+                        sheet['C14'].value = sheet['C14'].value + Employee13Sum
+                        sheet['C14'].value = str(sheet['C14'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B14'].value = sheet['B14'].value + Hours
+                        sheet['C14'].value = float(sheet['C14'].value) + float(Dollars)
+                        sheet['C14'].value = str(sheet['C14'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee14' and password == '14':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B15'].value = sheet['B15'].value + Hours
+                        Employee14Sum = Hours * Employee2Wage
+                        sheet['C15'].value = sheet['C15'].value + Employee14Sum
+                        sheet['C15'].value = str(sheet['C15'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B15'].value = sheet['B15'].value + Hours
+                        sheet['C15'].value = float(sheet['C15'].value) + float(Dollars)
+                        sheet['C15'].value = str(sheet['C15'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee15' and password == '15':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B16'].value = sheet['B16'].value + Hours
+                        Employee15Sum = Hours * Employee2Wage
+                        sheet['C16'].value = sheet['C16'].value + Employee15Sum
+                        sheet['C16'].value = str(sheet['C16'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B16'].value = sheet['B16'].value + Hours
+                        sheet['C16'].value = float(sheet['C16'].value) + float(Dollars)
+                        sheet['C16'].value = str(sheet['C16'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee16' and password == '16':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B17'].value = sheet['B17'].value + Hours
+                        Employee16Sum = Hours * Employee2Wage
+                        sheet['C17'].value = sheet['C17'].value + Employee16Sum
+                        sheet['C17'].value = str(sheet['C17'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B17'].value = sheet['B17'].value + Hours
+                        sheet['C17'].value = float(sheet['C17'].value) + float(Dollars)
+                        sheet['C17'].value = str(sheet['C17'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee17' and password == '17':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B18'].value = sheet['B18'].value + Hours
+                        Employee17Sum = Hours * Employee2Wage
+                        sheet['C18'].value = sheet['C18'].value + Employee17Sum
+                        sheet['C18'].value = str(sheet['C18'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B18'].value = sheet['B18'].value + Hours
+                        sheet['C18'].value = float(sheet['C18'].value) + float(Dollars)
+                        sheet['C18'].value = str(sheet['C18'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee18' and password == '18':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B19'].value = sheet['B19'].value + Hours
+                        Employee18Sum = Hours * Employee2Wage
+                        sheet['C19'].value = sheet['C19'].value + Employee18Sum
+                        sheet['C19'].value = str(sheet['C19'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B19'].value = sheet['B19'].value + Hours
+                        sheet['C19'].value = float(sheet['C19'].value) + float(Dollars)
+                        sheet['C19'].value = str(sheet['C19'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee19' and password == '19':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B20'].value = sheet['B20'].value + Hours
+                        Employee19Sum = Hours * Employee2Wage
+                        sheet['C20'].value = sheet['C20'].value + Employee19Sum
+                        sheet['C20'].value = str(sheet['C20'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B20'].value = sheet['B20'].value + Hours
+                        sheet['C20'].value = float(sheet['C20'].value) + float(Dollars)
+                        sheet['C20'].value = str(sheet['C20'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+            elif userName == 'Employee20' and password == '20':
+                print("Welcome! ")
+                answer = None
+                while answer not in ("1", "2"):
+                    answer = input("1 for adding hours, 2 for adding dollars: ")
+                    if answer == "1":
+                        Hours = input("How many hours do you want to add: ")
+                        Hours = int(Hours)
+                        sheet['B21'].value = sheet['B21'].value + Hours
+                        Employee20Sum = Hours * Employee2Wage
+                        sheet['C21'].value = sheet['C21'].value + Employee20Sum
+                        sheet['C21'].value = str(sheet['C21'].value)
+                        wb.save('Test.xlsx')
+                        main()
+                    elif answer == "2":
+                        Dollars = input("How many dollars do you want to add: ")
+                        Dollars = float(Dollars)
+                        Hours = Dollars / Employee2Wage 
+                        sheet['B21'].value = sheet['B21'].value + Hours
+                        sheet['C21'].value = float(sheet['C21'].value) + float(Dollars)
+                        sheet['C21'].value = str(sheet['C21'].value)
+                        wb.save('Test.xlsx')
+                        main() 
+                break
+            else:
+                print("Your Username and Password is wrong!") 
+                userName = input("\n\nUsername: ") 
+                password = input("Password: ") 
+                count += 1 
+
+main()
