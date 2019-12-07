@@ -363,7 +363,7 @@ def main():
         elif MainAnswer == "5":
             print("see ya")
         else:
-            print("1 for clocking employee in, 2 for adding employee, 3 for whatever: ")
+            print("1 for clocking employee in, 2 for adding employee, 3 for whatever, 4 for master controls, 5 to end program: ")
     
             
 #function that displays total hours worked and money earned for selected employee
@@ -565,11 +565,13 @@ def MasterControl():
 #tracks attempts to login and stops program after 3 attempts
         count += 1
         if count == 3: 
-            print("\nThree Username and Password Attempts used. Goodbye") 
-            break 
+            print("\nThree Username and Password Attempts used. Goodbye")
+            main()
+            break
         else:
 #establishes correct UN&PW combo for Employee 1
             if userName == 'Employee1' and password == '1':
+                count = 0
                 print("Welcome! ")
                 answer = None
 #after correct UN&PW combo allows user to add hours or dollars to that employee   
@@ -595,6 +597,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 2
             elif userName == 'Employee2' and password == '2':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -620,6 +623,7 @@ def MasterControl():
                 
 #establishes correct UN&PW combo for Employee 3
             elif userName == 'Employee3' and password == '3':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -645,6 +649,7 @@ def MasterControl():
                 
 #establishes correct UN&PW combo for Employee 4
             elif userName == 'Employee4' and password == '4':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -669,6 +674,7 @@ def MasterControl():
                     break                             
 #establishes correct UN&PW combo for Employee 5
             elif userName == 'Employee5' and password == '5':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -693,6 +699,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 6
             elif userName == 'Employee6' and password == '6':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -717,6 +724,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 7
             elif userName == 'Employee7' and password == '7':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -741,6 +749,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 8
             elif userName == 'Employee8' and password == '8':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -765,6 +774,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 9
             elif userName == 'Employee9' and password == '9':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -789,6 +799,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 10
             elif userName == 'Employee10' and password == '10':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -813,6 +824,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 11
             elif userName == 'Employee11' and password == '11':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -837,6 +849,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 12
             elif userName == 'Employee12' and password == '12':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -861,6 +874,7 @@ def MasterControl():
                     break
 #establishes correct UN&PW combo for Employee 13
             elif userName == 'Employee13' and password == '13':
+                count = 0
                 print("Welcome! ")
                 answer = None
                 while answer not in ("1", "2"):
@@ -886,6 +900,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 14
             elif userName == 'Employee14' and password == '14':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -910,6 +925,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 15
             elif userName == 'Employee15' and password == '15':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -934,6 +950,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 16
             elif userName == 'Employee16' and password == '16':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -958,6 +975,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 17
             elif userName == 'Employee17' and password == '17':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -982,6 +1000,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 18
             elif userName == 'Employee18' and password == '18':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -1006,6 +1025,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 19
             elif userName == 'Employee19' and password == '19':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
@@ -1030,6 +1050,7 @@ def MasterControl():
 #establishes correct UN&PW combo for Employee 20
             elif userName == 'Employee20' and password == '20':
                 print("Welcome! ")
+                count = 0
                 answer = None
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
