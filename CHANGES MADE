@@ -1,29 +1,41 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Dec  6 15:20:54 2019
+Created on Fri Dec  6 18:31:43 2019
 
-@author: Chole.Drake
+@author: tyler
 """
-
+#imports openpyxl module
 import openpyxl
+#imports os module to allow interface with whatever os python is running on
 import os
 
-os.chdir('C:\\Users\\Chole.Drake\\Desktop')
+#file path program runs in changeable for each computer
+os.chdir('C:\\Users\\tyler\\Desktop')
 
+#loads excel file where workers hours and money made will be stored and tracked
 wb = openpyxl.load_workbook('Test.xlsx')
 
+#opens sheet 1 in excel file
 sheet = wb["Sheet1"]
 
+#imports time module to allow tracking of time 
 import time 
 
+#allows end_time to be used throughout the program
 global end_time
+#allows start_time to be used throughout the program
 global start_time
+#declares Employee1Start as a float instead of integer
 Employee1Start = float(0)
+#declares Employee2Start as a float instead of integer
 Employee2Start = float(0)
 
+#sets wage for base employees
 Employee1Wage = 9
+#sets wage for managers
 Employee2Wage = 11
 
+#allows Employee_Sum to be used throughout the program
 global Employee1Sum
 global Employee2Sum
 global Employee3Sum
@@ -45,11 +57,13 @@ global Employee18Sum
 global Employee19Sum
 global Employee20Sum
 
+
 Employee1 = "Employee1"
 Employee2 = "Employee2"
 Employee3 = "Employee3"
 Employee4 = "Employee4"
-   
+
+#function to trakc initiate, stop and store time tracking
 def TotalTimeLapsed(End, Start):
     start_time1 = Start
     end_time1 = End
@@ -61,6 +75,7 @@ def TotalTimeLapsed(End, Start):
     print(TotalTimeLapsed)
     return(TotalTimeLapsed)
 
+#function that prompts user to select employee to clock in 
 def ChooseEmployeeClockIn():
     start_time = 0 
     global Employee1Start
@@ -85,7 +100,8 @@ def ChooseEmployeeClockIn():
     global Employee20Start
     input("Press Enter to start")
     start_time = time.time()  
-   
+
+#while loop that starts time tracking for employees once one has been entered 
     Answer = None  
     while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):   
         Answer = input("Enter which Employee you want to clock in(Employee1 - Employee20): ")
@@ -171,7 +187,8 @@ def ChooseEmployeeClockIn():
             return float(Employee20Start)
         else:
             print("Please enter Employee1, Employee2")
-            
+
+##function that prompts user to select employee to clock out
 def ChooseEmployeeClockOut():
     end_time = 0
     global Employee1End
@@ -197,6 +214,7 @@ def ChooseEmployeeClockOut():
     input("Press Enter to end")
     end_time = time.time()
    
+#while loop that stops time tracking for employees once one has been entered
     Answer = None
     while Answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):
         Answer = input("Enter which Employee you want to clock out(Employee1 - Employee20): ")
@@ -283,28 +301,36 @@ def ChooseEmployeeClockOut():
         else:
             print("Please enter Employee1, Employee2")
             
+#function that prompts user to select from a menu of options within the app
 def main():
     MainAnswer = None
     while MainAnswer not in ("1", "2", "3", "4", "5"):
         MainAnswer = input("1 for clocking employee in, 2 for clocking out employee, 3 see total, 4 for master controls, 5 to end program: ")
+#initiates ChooseEpmloyeeClockIn function
         if MainAnswer == "1":
             ChooseEmployeeClockIn()
+#initiates ChooseEmployeeClockOut function
         elif MainAnswer == "2":
             ChooseEmployeeClockOut()
+#initiates DisplayTotal function
         elif MainAnswer == "3":
             DisplayTotal()
+#initiates MasterControl function
         elif MainAnswer == "4":
             MasterControl()
+#ends program
         elif MainAnswer == "5":
             print("see ya")
         else:
             print("1 for clocking employee in, 2 for adding employee, 3 for whatever: ")
     
             
+#function that displays total hours worked and money earned for selected employee
 def DisplayTotal():
     answer = None
     while answer not in ("Employee1", "Employee2","Employee3","Employee4","Employee5","Employee6","Employee7","Employee8","Employee9","Employee10","Employee11","Employee12","Employee13","Employee14","Employee15","Employee16","Employee17","Employee18","Employee19","Employee20"):       
         answer = input("What Employee are you looking for?: ")
+#pulls information from sheets withing the excel that are associated with this employee
         if answer == "Employee1":
             print("Hours worked",sheet['B2'].value, "Money earned", sheet['C2'].value)
             Employee1Sum = TotalTimeLapsed(Employee1Start, Employee1End) * Employee1Wage
@@ -314,6 +340,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee2":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B3'].value, "Money earned", sheet['C3'].value)
             Employee2Sum = TotalTimeLapsed(Employee2Start, Employee2End) * Employee2Wage
             sheet['B3'].value = TotalTimeLapsed(Employee2Start, Employee2End) + sheet['B3'].value
@@ -322,6 +349,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee3":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B4'].value, "Money earned", sheet['C4'].value)
             Employee3Sum = TotalTimeLapsed(Employee3Start, Employee3End) * Employee2Wage
             sheet['B4'].value = TotalTimeLapsed(Employee3Start, Employee3End) + sheet['B4'].value
@@ -330,6 +358,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee4":     
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B5'].value, "Money earned", sheet['C5'].value) 
             Employee4Sum = TotalTimeLapsed(Employee4Start, Employee4End) * Employee2Wage
             sheet['B5'].value = TotalTimeLapsed(Employee4Start, Employee4End) + sheet['B5'].value
@@ -338,6 +367,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()                         
         elif answer == "Employee5":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B6'].value, "Money earned", sheet['C6'].value)
             Employee5Sum = TotalTimeLapsed(Employee5Start, Employee5End) * Employee2Wage
             sheet['B6'].value = TotalTimeLapsed(Employee5Start, Employee5End) + sheet['B6'].value
@@ -346,6 +376,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee6":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B7'].value, "Money earned", sheet['C7'].value)
             Employee6Sum = TotalTimeLapsed(Employee6Start, Employee6End) * Employee2Wage
             sheet['B7'].value = TotalTimeLapsed(Employee6Start, Employee6End) + sheet['B7'].value
@@ -354,6 +385,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee7":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B8'].value, "Money earned", sheet['C8'].value)
             Employee7Sum = TotalTimeLapsed(Employee7Start, Employee7End) * Employee2Wage
             sheet['B8'].value = TotalTimeLapsed(Employee7Start, Employee7End) + sheet['B8'].value
@@ -362,6 +394,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee8":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B9'].value, "Money earned", sheet['C9'].value)
             Employee8Sum = TotalTimeLapsed(Employee8Start, Employee8End) * Employee2Wage
             sheet['B9'].value = TotalTimeLapsed(Employee8Start, Employee8End) + sheet['B9'].value
@@ -370,6 +403,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee9":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B10'].value, "Money earned", sheet['C10'].value)
             Employee9Sum = TotalTimeLapsed(Employee9Start, Employee9End) * Employee2Wage
             sheet['B10'].value = TotalTimeLapsed(Employee9Start, Employee9End) + sheet['B10'].value
@@ -378,6 +412,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee10":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B11'].value, "Money earned", sheet['C11'].value)
             Employee10Sum = TotalTimeLapsed(Employee10Start, Employee10End) * Employee2Wage
             sheet['B11'].value = TotalTimeLapsed(Employee10Start, Employee10End) + sheet['B11'].value
@@ -386,6 +421,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee11":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B12'].value, "Money earned", sheet['C12'].value)
             Employee11Sum = TotalTimeLapsed(Employee11Start, Employee11End) * Employee2Wage
             sheet['B12'].value = TotalTimeLapsed(Employee11Start, Employee11End) + sheet['B12'].value
@@ -394,6 +430,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee12":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B13'].value, "Money earned", sheet['C13'].value)
             Employee12Sum = TotalTimeLapsed(Employee12Start, Employee12End) * Employee2Wage
             sheet['B13'].value = TotalTimeLapsed(Employee12Start, Employee12End) + sheet['B13'].value
@@ -402,6 +439,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee13":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B14'].value, "Money earned", sheet['C14'].value)
             Employee13Sum = TotalTimeLapsed(Employee13Start, Employee13End) * Employee2Wage
             sheet['B14'].value = TotalTimeLapsed(Employee13Start, Employee13End) + sheet['B14'].value
@@ -410,6 +448,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee14":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B15'].value, "Money earned", sheet['C15'].value)
             Employee14Sum = TotalTimeLapsed(Employee14Start, Employee14End) * Employee2Wage
             sheet['B15'].value = TotalTimeLapsed(Employee14Start, Employee14End) + sheet['B15'].value
@@ -418,6 +457,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee15":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B16'].value, "Money earned", sheet['C16'].value)
             Employee15Sum = TotalTimeLapsed(Employee15Start, Employee15End) * Employee2Wage
             sheet['B16'].value = TotalTimeLapsed(Employee15Start, Employee15End) + sheet['B16'].value
@@ -426,6 +466,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee16":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B17'].value, "Money earned", sheet['C17'].value)
             Employee16Sum = TotalTimeLapsed(Employee16Start, Employee16End) * Employee2Wage
             sheet['B17'].value = TotalTimeLapsed(Employee16Start, Employee16End) + sheet['B17'].value
@@ -434,6 +475,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee17":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B18'].value, "Money earned", sheet['C18'].value)
             Employee17Sum = TotalTimeLapsed(Employee17Start, Employee17End) * Employee2Wage
             sheet['B18'].value = TotalTimeLapsed(Employee17Start, Employee17End) + sheet['B18'].value
@@ -442,6 +484,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee18":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B19'].value, "Money earned", sheet['C19'].value)
             Employee18Sum = TotalTimeLapsed(Employee18Start, Employee18End) * Employee2Wage
             sheet['B19'].value = TotalTimeLapsed(Employee18Start, Employee18End) + sheet['B19'].value
@@ -450,6 +493,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee19":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B20'].value, "Money earned", sheet['C20'].value)
             Employee19Sum = TotalTimeLapsed(Employee19Start, Employee19End) * Employee2Wage
             sheet['B20'].value = TotalTimeLapsed(Employee19Start, Employee19End) + sheet['B20'].value
@@ -458,6 +502,7 @@ def DisplayTotal():
             wb.save('Test.xlsx')
             main()
         elif answer == "Employee20":
+#pulls information from sheets withing the excel that are associated with this employee
             print("Hours worked",sheet['B21'].value, "Money earned", sheet['C21'].value)
             Employee20Sum = TotalTimeLapsed(Employee20Start, Employee20End) * Employee2Wage
             sheet['B21'].value = TotalTimeLapsed(Employee20Start, Employee20End) + sheet['B21'].value
@@ -467,23 +512,25 @@ def DisplayTotal():
             main()
         else:
             "Please try again"
-            
-#def AddHours(EmployeeAddedHours):
-    
-
+                
+#master control function 
 def MasterControl():
     count = 0 
+#request username and password for security
     while True: 
         userName = input("Hello! Please Clock In! \n\nUsername: ") 
         password = input("Password: ")
+#tracks attempts to login and stops program after 3 attempts
         count += 1
         if count == 3: 
             print("\nThree Username and Password Attempts used. Goodbye") 
             break 
         else:
+#establishes correct UN&PW combo for Employee 1
             if userName == 'Employee1' and password == '1':
                 print("Welcome! ")
                 answer = None
+#after correct UN&PW combo allows user to add hours or dollars to that employee   
                 while answer not in ("1", "2"):
                     answer = input("1 for adding hours, 2 for adding dollars: ")
                     if answer == "1":
@@ -505,6 +552,7 @@ def MasterControl():
                         wb.save('Test.xlsx')
                         main() 
                 break
+#establishes correct UN&PW combo for Employee 2
             elif userName == 'Employee2' and password == '2':
                 print("Welcome! ")
                 answer = None
@@ -529,6 +577,7 @@ def MasterControl():
                         wb.save('Test.xlsx')
                         main() 
                 break
+#establishes correct UN&PW combo for Employee 3
             elif userName == 'Employee3' and password == '3':
                 print("Welcome! ")
                 answer = None
@@ -553,6 +602,7 @@ def MasterControl():
                         wb.save('Test.xlsx')
                         main() 
                 break
+#establishes correct UN&PW combo for Employee 4
             elif userName == 'Employee4' and password == '4':
                 print("Welcome! ")
                 answer = None
@@ -577,6 +627,7 @@ def MasterControl():
                         wb.save('Test.xlsx')
                         main()                                  
                 break
+#establishes correct UN&PW combo for Employee 5
             elif userName == 'Employee5' and password == '5':
                 print("Welcome! ")
                 answer = None
@@ -601,6 +652,7 @@ def MasterControl():
                         wb.save('Test.xlsx')
                         main() 
                 break
+#establishes correct UN&PW combo for Employee 6
             elif userName == 'Employee6' and password == '6':
                 print("Welcome! ")
                 answer = None
@@ -624,6 +676,8 @@ def MasterControl():
                         sheet['C7'].value = str(sheet['C7'].value)
                         wb.save('Test.xlsx')
                         main() 
+                break    
+#establishes correct UN&PW combo for Employee 7
             elif userName == 'Employee7' and password == '7':
                 print("Welcome! ")
                 answer = None
@@ -646,7 +700,9 @@ def MasterControl():
                         sheet['C8'].value = float(sheet['C8'].value) + float(Dollars)
                         sheet['C8'].value = str(sheet['C8'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break       
+#establishes correct UN&PW combo for Employee 8
             elif userName == 'Employee8' and password == '8':
                 print("Welcome! ")
                 answer = None
@@ -669,7 +725,9 @@ def MasterControl():
                         sheet['C9'].value = float(sheet['C9'].value) + float(Dollars)
                         sheet['C9'].value = str(sheet['C9'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 9
             elif userName == 'Employee9' and password == '9':
                 print("Welcome! ")
                 answer = None
@@ -692,7 +750,9 @@ def MasterControl():
                         sheet['C10'].value = float(sheet['C10'].value) + float(Dollars)
                         sheet['C10'].value = str(sheet['C10'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 10
             elif userName == 'Employee10' and password == '10':
                 print("Welcome! ")
                 answer = None
@@ -716,6 +776,8 @@ def MasterControl():
                         sheet['C11'].value = str(sheet['C11'].value)
                         wb.save('Test.xlsx')
                         main() 
+                break        
+#establishes correct UN&PW combo for Employee 11
             elif userName == 'Employee11' and password == '11':
                 print("Welcome! ")
                 answer = None
@@ -738,7 +800,9 @@ def MasterControl():
                         sheet['C12'].value = float(sheet['C12'].value) + float(Dollars)
                         sheet['C12'].value = str(sheet['C12'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 12
             elif userName == 'Employee12' and password == '12':
                 print("Welcome! ")
                 answer = None
@@ -761,7 +825,9 @@ def MasterControl():
                         sheet['C13'].value = float(sheet['C13'].value) + float(Dollars)
                         sheet['C13'].value = str(sheet['C13'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 13
             elif userName == 'Employee13' and password == '13':
                 print("Welcome! ")
                 answer = None
@@ -784,7 +850,9 @@ def MasterControl():
                         sheet['C14'].value = float(sheet['C14'].value) + float(Dollars)
                         sheet['C14'].value = str(sheet['C14'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 14
             elif userName == 'Employee14' and password == '14':
                 print("Welcome! ")
                 answer = None
@@ -807,7 +875,9 @@ def MasterControl():
                         sheet['C15'].value = float(sheet['C15'].value) + float(Dollars)
                         sheet['C15'].value = str(sheet['C15'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 15
             elif userName == 'Employee15' and password == '15':
                 print("Welcome! ")
                 answer = None
@@ -830,7 +900,9 @@ def MasterControl():
                         sheet['C16'].value = float(sheet['C16'].value) + float(Dollars)
                         sheet['C16'].value = str(sheet['C16'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 16
             elif userName == 'Employee16' and password == '16':
                 print("Welcome! ")
                 answer = None
@@ -853,7 +925,9 @@ def MasterControl():
                         sheet['C17'].value = float(sheet['C17'].value) + float(Dollars)
                         sheet['C17'].value = str(sheet['C17'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 17
             elif userName == 'Employee17' and password == '17':
                 print("Welcome! ")
                 answer = None
@@ -876,7 +950,9 @@ def MasterControl():
                         sheet['C18'].value = float(sheet['C18'].value) + float(Dollars)
                         sheet['C18'].value = str(sheet['C18'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 18
             elif userName == 'Employee18' and password == '18':
                 print("Welcome! ")
                 answer = None
@@ -899,7 +975,9 @@ def MasterControl():
                         sheet['C19'].value = float(sheet['C19'].value) + float(Dollars)
                         sheet['C19'].value = str(sheet['C19'].value)
                         wb.save('Test.xlsx')
-                        main() 
+                        main()
+                break        
+#establishes correct UN&PW combo for Employee 19
             elif userName == 'Employee19' and password == '19':
                 print("Welcome! ")
                 answer = None
@@ -923,6 +1001,8 @@ def MasterControl():
                         sheet['C20'].value = str(sheet['C20'].value)
                         wb.save('Test.xlsx')
                         main() 
+                break        
+#establishes correct UN&PW combo for Employee 20
             elif userName == 'Employee20' and password == '20':
                 print("Welcome! ")
                 answer = None
